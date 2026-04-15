@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Showplly for Startale | Before Finance. Before DeFi.</title>
+  <meta
+    name="description"
+    content="Showplly introduces a Pre-Financial Identity & Authenticity Layer for RWA, stablecoin commerce, Web3 infrastructure, and DeFi before tokenization, automation, compliance, and capital deployment."
+  />
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --surface-2: #f1f4f8;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe2ea;
+      --blue: #1d4ed8;
+      --blue-dark: #1e3a8a;
+      --violet: #6d28d9;
+      --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(247, 248, 250, 0.88);
+      border-bottom: 1px solid rgba(219, 226, 234, 0.9);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 74px;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .brand span { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: #fff !important;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--text) !important;
+    }
+
+    .btn-secondary:hover {
+      border-color: #c3cfdb;
+      transform: translateY(-1px);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: #fff !important;
+      border-color: var(--blue);
+    }
+
+    .btn-blue:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eaf1ff;
+      color: var(--blue-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.35rem, 5vw, 4.8rem);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .hero-note a {
+      color: var(--blue-dark);
+      text-decoration: underline;
+    }
+
+    .hero-patent {
+      margin-top: 14px;
+      color: var(--blue-dark);
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .signal {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .signal h4 {
+      margin: 0 0 8px;
+      font-size: 0.96rem;
+    }
+
+    .signal p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      padding: 34px 0 26px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+      max-width: 780px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.9rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3, .card h4 {
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .problem-card {
+      border-top: 4px solid #111827;
+    }
+
+    .problem-card .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .statement {
+      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+      border: 1px solid #d7e5ff;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .statement p {
+      margin: 0;
+      font-size: clamp(1.3rem, 2vw, 1.85rem);
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .statement strong { color: var(--blue-dark); }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .flow-step {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      min-height: 180px;
+    }
+
+    .flow-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: var(--bg);
+      padding: 0 6px;
+    }
+
+    .flow-step .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .flow-step h4 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .blue-panel {
+      background: linear-gradient(180deg, #0f172a 0%, #16233f 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .blue-panel h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -0.02em;
+    }
+
+    .blue-panel p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .impact {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .impact h4 {
+      margin: 0 0 8px;
+      color: #fff;
+    }
+
+    .impact p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 0.95rem;
+    }
+
+    .verify {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .verify-ui {
+      background: #0b1220;
+      color: #fff;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .verify-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.88);
+    }
+
+    .score {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    .score strong {
+      font-size: 2.2rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .score small {
+      display: block;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status-ok, .status-no {
+      white-space: nowrap;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .status-ok {
+      color: #d1fae5;
+      background: rgba(22,163,74,0.18);
+      border: 1px solid rgba(22,163,74,0.35);
+    }
+
+    .status-no {
+      color: #fee2e2;
+      background: rgba(220,38,38,0.18);
+      border: 1px solid rgba(220,38,38,0.35);
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .check span {
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .capital-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .capital-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .capital-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .capital-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .capital-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .capital-card li { margin-bottom: 6px; }
+
+    .bridge-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .bridge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .bridge-node {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .bridge-node h4 {
+      margin: 0 0 8px;
+      font-size: 0.98rem;
+    }
+
+    .bridge-node p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cta {
+      padding: 40px 0 78px;
+    }
+
+    .cta-box {
+      background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
+      border: 1px solid #d6e3ff;
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-box p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 42px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .verify,
+      .grid-4,
+      .capital-grid,
+      .flow,
+      .bridge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-2,
+      .impact-grid,
+      .signal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        bottom: -18px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .card,
+      .hero-card,
+      .statement,
+      .blue-panel,
+      .cta-box,
+      .bridge-card {
+        padding: 22px;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Show<span>plly</span> × Startale</a>
+      <nav class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#capital">Finance / DeFi</a>
+        <a href="#verify">Verify</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">For Startale / Web3 Infrastructure / Ecosystem Builders</div>
+          <h1>Before finance. Before DeFi. Assets need identity.</h1>
+          <p class="lead">
+            Showplly introduces a <strong>Pre-Financial Identity &amp; Authenticity Layer</strong>
+            that defines what an asset is, anchors where it comes from, and keeps it verifiable
+            before tokenization, finance, DeFi automation, stablecoin commerce, and capital deployment.
+          </p>
+          <p class="hero-patent">
+            Built on patented technology, with an additional priority-based patent application under examination.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Start a strategic discussion</a>
+            <a href="#verify" class="btn btn-secondary">See the verification UX</a>
+          </div>
+          <div class="hero-note">
+            Built for a future where RWA, stablecoin settlement, and Web3 infrastructure must be not only programmable,
+            but also investable, legible, and structurally trustworthy before execution begins.
+            <br><br>
+            <a href="questions.html" class="btn btn-blue">Read strategic questions →</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mini-label">Why this matters now</div>
+          <div class="signal-grid">
+            <div class="signal">
+              <h4>RWA is scaling</h4>
+              <p>But many assets are tokenized before their identity, origin, and continuity are clearly defined.</p>
+            </div>
+            <div class="signal">
+              <h4>Stablecoin commerce is emerging</h4>
+              <p>Payment rails can move value instantly, but they still require clarity about what is being represented.</p>
+            </div>
+            <div class="signal">
+              <h4>DeFi is automating flows</h4>
+              <p>Without a defined and verifiable asset, DeFi does not remove ambiguity. It automates it.</p>
+            </div>
+            <div class="signal">
+              <h4>Infrastructure is becoming strategic</h4>
+              <p>The next edge is not only scaling Web3 rails, but defining what those rails can reliably carry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Web3 is advancing. But what exactly is being tokenized, settled, or automated?</h2>
+          <p>
+            Many ecosystems optimize issuance, payment, and execution.
+            Far fewer define the asset itself before tokenization, finance, stablecoin settlement, or DeFi automation begin.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card problem-card">
+            <div class="num">01</div>
+            <h3>Assets without clear definition</h3>
+            <p>
+              A token may exist, but the object it refers to can remain structurally vague,
+              inconsistently described, or weakly anchored to source.
+            </p>
+          </div>
+
+          <div class="card problem-card">
+            <div class="num">02</div>
+            <h3>Origin without durable proof</h3>
+            <p>
+              Once an asset moves across systems, commerce, platforms, or custodians,
+              its original source often becomes harder to verify rather than easier.
+            </p>
+          </div>
+
+          <div class="card problem-card">
+            <div class="num">03</div>
+            <h3>Execution facing ambiguity</h3>
+            <p>
+              Capital, stablecoin rails, and DeFi logic can scale only after what is being represented,
+              verified, and trusted is structurally clear.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="statement">
+          <p>
+            <strong>Before capital flows and before DeFi automates, assets must be clearly defined, anchored, and verifiable.</strong>
+            Web3 does not only need better rails. It needs a shared layer that makes the underlying asset legible
+            to infrastructure, institutions, markets, and execution environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="solution" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Showplly introduces a Pre-Financial Identity Layer.</h2>
+          <p>
+            Not another chain. Not another token standard. Not another marketplace.
+            A foundational layer that prepares assets, products, and content for verifiable participation
+            in Web3 before they enter tokenization, finance, stablecoin settlement, or DeFi automation.
+          </p>
+        </div>
+
+        <div class="flow">
+          <div class="flow-step">
+            <div class="tag">Step 1</div>
+            <h4>Define the asset</h4>
+            <p>Establish the asset’s identity structure before value, ownership logic, or execution is applied.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="tag">Step 2</div>
+            <h4>Anchor the origin</h4>
+            <p>Attach a durable reference to source, creator, context, and the initial authenticity state.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="tag">Step 3</div>
+            <h4>Preserve verifiability</h4>
+            <p>Keep the asset’s structural trust available over time, including lifecycle, provenance, and encumbrance history.</p>
+          </div>
+
+          <div class="flow-step">
+            <div class="tag">Step 4</div>
+            <h4>Enable execution</h4>
+            <p>Tokenization, finance, DeFi automation, compliance flows, and capital discussions can start from a clearer base.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;" class="grid-2">
+          <div class="card">
+            <h3>For Startale</h3>
+            <p style="margin:0;">
+              This layer can strengthen how Web3 infrastructure handles real-world assets, commerce-linked assets,
+              and future programmable value flows by making the represented asset structurally legible first.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Across ecosystems</h3>
+            <p style="margin:0;">
+              The same verification structure can remain useful across Web2 systems, commerce platforms,
+              tokenized environments, and interoperable Web3 infrastructure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container blue-panel">
+        <h2>Why this matters for Startale</h2>
+        <p>
+          Infrastructure becomes more valuable when it does not only move value,
+          but also improves the conditions under which value becomes trustworthy, programmable, and investable.
+        </p>
+
+        <div class="impact-grid">
+          <div class="impact">
+            <h4>For RWA infrastructure</h4>
+            <p>Create a clearer precondition for tokenization by structurally defining the asset before issuance.</p>
+          </div>
+          <div class="impact">
+            <h4>For stablecoin commerce</h4>
+            <p>Connect payment and settlement to assets whose identity and origin are more legible from the start.</p>
+          </div>
+          <div class="impact">
+            <h4>For DeFi execution</h4>
+            <p>Reduce the risk that automated logic operates on ambiguous, weakly defined, or weakly anchored assets.</p>
+          </div>
+          <div class="impact">
+            <h4>For ecosystem strategy</h4>
+            <p>Position infrastructure not only as rails, but as a stronger foundation for investable digital asset systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="capital" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why this matters for finance, stablecoins, and DeFi</h2>
+          <p>
+            Execution layers can accelerate flows. They should not be expected to define what an asset is after the fact.
+          </p>
+        </div>
+
+        <div class="capital-grid">
+          <div class="capital-card">
+            <h3>Investable RWA starts earlier</h3>
+            <p>
+              Financialization is downstream. If the asset’s identity is structurally weak at the start,
+              tokenization does not eliminate the ambiguity — it packages it.
+            </p>
+            <ul>
+              <li>Clearer asset definition</li>
+              <li>Lower structural ambiguity</li>
+              <li>Stronger basis for diligence</li>
+            </ul>
+          </div>
+
+          <div class="capital-card">
+            <h3>Stablecoin rails need readable assets</h3>
+            <p>
+              Instant settlement is powerful, but settlement alone does not clarify the asset behind the transaction.
+              The represented object still needs structure.
+            </p>
+            <ul>
+              <li>Better asset clarity before settlement</li>
+              <li>Stronger trust in commerce-linked flows</li>
+              <li>Improved foundation for scalable usage</li>
+            </ul>
+          </div>
+
+          <div class="capital-card">
+            <h3>DeFi should not automate ambiguity</h3>
+            <p>
+              DeFi automates financial logic. If the underlying asset is poorly defined or weakly anchored,
+              automated execution may scale uncertainty rather than trust.
+            </p>
+            <ul>
+              <li>Cleaner preconditions for automation</li>
+              <li>More reliable execution context</li>
+              <li>Stronger base for scaling</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <div class="card">
+            <h3 style="margin-bottom:8px;">Finance and DeFi rely on the same underlying truth</h3>
+            <p style="margin:0;">
+              Both traditional finance and DeFi depend on the same prerequisite:
+              the asset must be clearly defined, anchored to origin, and verifiable before capital or automated logic begin to rely on it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Web2 and Web3 need a shared identity structure</h2>
+          <p>
+            Real assets, products, and commerce-linked objects do not live only inside Web3.
+            They move across enterprise systems, media platforms, marketplaces, logistics environments, and blockchain ecosystems.
+          </p>
+        </div>
+
+        <div class="bridge-card">
+          <h3 style="margin-bottom:8px;">A bridge before execution</h3>
+          <p style="margin:0; color: var(--muted);">
+            Showplly can help maintain a consistent verification structure across both Web2 systems and Web3 ecosystems,
+            so the same asset identity remains understandable as it moves between them.
+          </p>
+
+          <div class="bridge-grid">
+            <div class="bridge-node">
+              <h4>Web2 Source Systems</h4>
+              <p>Commerce, enterprise, media, logistics, and creator environments.</p>
+            </div>
+            <div class="bridge-node">
+              <h4>Showplly Identity Layer</h4>
+              <p>Asset definition, origin anchoring, verification continuity.</p>
+            </div>
+            <div class="bridge-node">
+              <h4>Web3 Execution Systems</h4>
+              <p>RWA tokenization, stablecoin settlement, DeFi automation, capital markets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="verify" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Verification must be understandable in seconds</h2>
+          <p>
+            The difference between a concept and infrastructure is experience.
+            This is where Showplly can move from explanation to immediate recognition.
+          </p>
+        </div>
+
+        <div class="verify">
+          <div class="card">
+            <h3>Verify before tokenization and execution</h3>
+            <p>
+              A simple verification UX can make origin, definition, and authenticity structure legible
+              before token issuance, stablecoin settlement, finance, or DeFi automation begin.
+            </p>
+            <ul>
+              <li>Origin verification status</li>
+              <li>Asset-definition completeness</li>
+              <li>Authenticity structure score</li>
+              <li>Lifecycle / provenance / encumbrance availability</li>
+            </ul>
+            <p>
+              This is where an abstract infrastructure layer becomes intuitive to founders,
+              investors, institutions, and ecosystem partners.
+            </p>
+            <p>
+              This is where assets become understandable before they become financial.
+            </p>
+          </div>
+
+          <div class="verify-ui">
+            <div class="verify-top">
+              <div class="pill">Verification Preview</div>
+              <div class="pill">Asset ID: SP-ST-001</div>
+            </div>
+
+            <div class="score">
+              <div>
+                <small>Authenticity Structure Score</small>
+                <strong>92</strong>
+              </div>
+              <div>
+                <small>Evaluation</small>
+                <div class="status-ok">Verified</div>
+              </div>
+            </div>
+
+            <div class="checklist">
+              <div class="check">
+                <span>Origin anchored</span>
+                <div class="status-ok">Verified</div>
+              </div>
+              <div class="check">
+                <span>Asset definition established</span>
+                <div class="status-ok">Defined</div>
+              </div>
+              <div class="check">
+                <span>Lifecycle / provenance / encumbrance availability</span>
+                <div class="status-ok">Available</div>
+              </div>
+              <div class="check">
+                <span>Cross-ecosystem readability</span>
+                <div class="status-ok">Enabled</div>
+              </div>
+              <div class="check">
+                <span>Unverified structural gap</span>
+                <div class="status-no">Not detected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Positioning</h2>
+          <p>
+            Showplly should not be understood as one more Web3 project inside the stack.
+            It is better understood as a layer that improves the conditions under which Web3 infrastructure,
+            finance, and DeFi become more investable and trustworthy.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Not another application layer</h3>
+            <p>
+              Showplly is not competing to become one more token, chain, or marketplace.
+              Its role is upstream of those layers.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>A foundational layer before execution</h3>
+            <p>
+              It clarifies what is being represented before value, ownership, payment, compliance,
+              capital deployment, and automated logic begin to depend on that representation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Let’s discuss the layer before execution.</h2>
+          <p>
+            If Startale is helping shape the future of Web3 infrastructure, tokenization, and programmable value,
+            then the discussion should also include what happens before tokenization, before stablecoin settlement,
+            and before DeFi: identity, origin, and authenticity structure.
+          </p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="mailto:founder@showplly.com?subject=Startale%20Discussion%20-%20Showplly">
+              Contact founder@showplly.com
+            </a>
+            <a class="btn btn-secondary" href="questions.html">
+              Read strategic questions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>© Showplly. All rights reserved.</div>
+      <div>Pre-Financial Identity &amp; Authenticity Layer</div>
+    </div>
+  </footer>
+</body>
+</html>
